@@ -18,6 +18,16 @@ class food:
 
     def run(self):
 
+
+        i = 0
+
+        while True and i <100:
+            try:
+                self.downAndGetSrt()
+            except Exception:
+                i+=1
+
+
         print ("运行数据")
 
 
