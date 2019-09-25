@@ -27,7 +27,7 @@ if __name__ == '__main__':
         p = system("autosub -S en -D en %s -o %s" % (file_name,srtName))
 
         system('mv %s %s'%(srtName,srtPath))
-        system('rm -rf %s*'%srtPath)
+        #system('rm -rf %s*'%srtPath)
 
     except Exception:
         print ("失败")
