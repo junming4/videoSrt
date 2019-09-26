@@ -104,6 +104,7 @@ class food:
                 p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
                 system('mv %s %s' % (srtName, srtPath))
                 system('rm -rf %s/*' % path)
+                system('git pull')
                 system('git add .')
                 system('git commit -a -m %s' % name)
                 system('git push')
