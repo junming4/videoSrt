@@ -24,7 +24,7 @@ class food:
     def downAndGetSrt(self):
 
         path = 'download'
-        srtPath = './'
+        srtPath = '../'
 
 
         '''urlList = [
