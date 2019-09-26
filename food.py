@@ -63,16 +63,13 @@ class food:
         ]'''
 
 
-        name = '50个人尝试制作大蒜酱'
-        url = 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series'
+        name = '50个人试图分开蛋清和蛋黄'
+        url = 'https://video.epicurious.com/watch/50-people-try-to-separate-an-egg?c=series'
 
         file_name = '%s/%s.mp4' % (path, name)
 
-        system('git commit -a -m %s' % name)
-        system('git push')
 
-
-        '''try:
+        try:
             downloadVideo(url, file_name).run()
             srtName = '%s/%s.srt' % (path, name)
             p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
@@ -82,7 +79,7 @@ class food:
             system('git commit -a -m %s' % name)
             system('git push')
         except Exception:
-            print ("失败")'''
+            print ("失败")
 
 
 
