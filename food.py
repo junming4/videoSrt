@@ -95,7 +95,9 @@ class food:
 
             srtName = '%s/%s.srt' % (path, name)
 
-            if os.path.isfile(srtName):
+            srtTmp = '%s/%s.srt' % (srtPath, name)
+
+            if os.path.isfile(srtTmp):
                 continue
 
 
