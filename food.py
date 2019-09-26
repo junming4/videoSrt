@@ -6,6 +6,12 @@ from os import system
 from dotenv import load_dotenv
 load_dotenv()
 
+import sys
+
+
+if sys.getdefaultencoding() != 'utf-8':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 
 class food:
@@ -63,7 +69,7 @@ class food:
         ]'''
 
 
-        name = u'50个人尝试制作大蒜酱'
+        name = '50个人尝试制作大蒜酱'
         url = 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series'
 
         file_name = '%s/%s.mp4' % (path, name)
