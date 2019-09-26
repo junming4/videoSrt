@@ -83,7 +83,6 @@ class food:
             'https://video.epicurious.com/watch/50-person-prep-challenge-best-fails-in-50-people-try-200?c=series 50人尝试中最多失败（200多次失败）',
             'https://video.epicurious.com/watch/50-person-prep-challenge-50-people-try-to-make-a-quesadilla?c=series 50人尝试制作墨西哥玉米饼',
             'https://video.epicurious.com/watch/50-person-prep-challenge-50-people-try-to-identify-spices?c=series 50个人尝试识别6种香料',
-            'https://video.epicurious.com/watch/50-person-prep-challenge-50-people-try-to-mince-parsley?c=series 50个人尝试切碎欧芹'
         ]
 
         i = 0
