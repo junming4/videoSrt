@@ -35,6 +35,43 @@ class food:
         path = 'download'
         srtPath = './'
 
+
+        '''urlList = [
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series',
+                'name':'50个人尝试制作大蒜酱'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-separate-an-egg?c=series',
+                'name': '50个人试图分开蛋清和蛋黄'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-slice-an-avocado?c=series',
+                'name': '50个人尝试切鳄梨'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-slice-a-mango?c=series',
+                'name':'50个人尝试切芒果'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-hone-a-knife?c=series',
+                'name': '50个人试图磨刀'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-cut-carrot-sticks?c=series',
+                'name': '50个人尝试切胡萝卜'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-chop-deseed-a-pepper?c=series',
+                'name': '50个人试图剁成辣椒'
+            },
+            {
+                'url': 'https://video.epicurious.com/watch/50-people-try-to-slice-an-apple-for-pie?c=series',
+                'name': '50个人尝试切苹果馅饼'
+            }
+        ]'''
+
+
         name = '50个人尝试制作大蒜酱'
         url = 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series'
 
