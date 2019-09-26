@@ -63,14 +63,14 @@ class food:
         ]'''
 
 
-        name = '50个人尝试制作大蒜酱'
+        name = u'50个人尝试制作大蒜酱'
         url = 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series'
 
         file_name = '%s/%s.mp4' % (path, name)
 
 
         try:
-            downloadVideo(url, file_name).run()
+            #downloadVideo(url, file_name).run()
             srtName = '%s/%s.srt' % (path, name)
             p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
             system('mv %s %s' % (srtName, srtPath))
