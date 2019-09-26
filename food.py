@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import time
 
 from ShortPackage.downloadVideo import downloadVideo
 import os
@@ -99,8 +100,7 @@ class food:
 
 
             try:
-                # downloadVideo(url, file_name).run()
-
+                downloadVideo(url, file_name).run()
                 p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
                 system('mv %s %s' % (srtName, srtPath))
                 system('rm -rf %s/*' % path)
@@ -110,6 +110,8 @@ class food:
             except Exception:
                 i +=1
                 print ("fail num:%d"%i)
+
+        time.sleep(1)
 
 
 
