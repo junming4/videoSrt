@@ -101,7 +101,7 @@ class food:
 
             try:
                 downloadVideo(url, file_name).run()
-                p = system("autosub -S en -D en %s -o %s -K %s" % (file_name, srtName, 'AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw'))
+                p = system("autosub -S en -D zh-Cn %s -o %s -K %s" % (file_name, srtName, 'AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw'))
                 system('mv %s %s' % (srtName, srtPath))
                 system('rm -rf %s/*' % path)
                 system('git pull')
