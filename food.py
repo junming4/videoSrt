@@ -7,6 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+import sys
+
+
+if sys.getdefaultencoding() != 'utf-8':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
+
 
 class food:
 
@@ -69,8 +77,10 @@ class food:
         file_name = '%s/%s.mp4' % (path, name)
 
 
+
+
         try:
-            downloadVideo(url, file_name).run()
+            #downloadVideo(url, file_name).run()
             srtName = '%s/%s.srt' % (path, name)
             p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
             system('mv %s %s' % (srtName, srtPath))
