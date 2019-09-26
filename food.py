@@ -6,7 +6,6 @@ from os import system
 from dotenv import load_dotenv
 load_dotenv()
 
-import pymongo
 
 
 class food:
@@ -34,38 +33,28 @@ class food:
     def downAndGetSrt(self):
 
         path = 'download'
-        srtPath = os.getenv('VIDEO_SRT_PATH')
+        srtPath = './'
 
-        myclient = pymongo.MongoClient("mongodb://47.104.77.182:27017/")
-        mydb = myclient["video"]
-        mycol = mydb["food"]
+        name = '50个人尝试制作大蒜酱'
+        url = 'https://video.epicurious.com/watch/50-people-try-to-make-garlic-paste?c=series'
 
-        while mycol.find_one({'status': 0}) != None:
-            data = mycol.find_one({'status': 0})
+        file_name = '%s/%s.mp4' % (path, name)
 
-            name = data['name']
 
-            myquery = {"_id": data['_id']}
+        try:
+            downloadVideo(url, file_name).run()
+            srtName = '%s/%s.srt' % (path, name)
+            p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
+            system('mv %s %s' % (srtName, srtPath))
+            system('rm -rf %s/*' % path)
+            system('git add .')
+            system('git commit -a -m "%s"' % name)
+            system('git push"')
+        except Exception:
+            print ("失败")
 
-            file_name = '%s/%s.mp4' % (path, name)
 
-            url = data['url']
-            try:
-                downloadVideo(url, file_name).run()
-                srtName = '%s/%s.srt' % (path, name)
-                p = system("autosub -S en -D en %s -o %s" % (file_name, srtName))
-                system('mv %s %s' % (srtName, srtPath))
-                system('rm -rf %s/*' % path)
-                system('cd %s' % srtPath)
-                '''system('git add .')
-                system('git commit -a -m "%s"' % name)
-                system('git push"')'''
-                setx = {"$set": {'status': 1}}
-            except Exception:
-                print ("失败")
-                setx = {"$set": {'status': -1}}
 
-            mycol.update_one(myquery, setx)
 
 
 if __name__ == '__main__':
